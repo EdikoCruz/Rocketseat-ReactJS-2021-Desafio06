@@ -1,0 +1,16 @@
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+    color: var(--chakra-colors-Dark-Info) !important;
+}
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--chakra-colors-Highlight) !important;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: var(--chakra-colors-Highlight) !important;
+}
+
+.swiper-pagination-bullet {
+    background: var(--chakra-colors-Dark-Info) !important;
+    opacity: 1 !important;
+}
