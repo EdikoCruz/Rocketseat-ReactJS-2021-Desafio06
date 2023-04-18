@@ -1,50 +1,65 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
+import axios from 'axios';
 
 import { Header } from '@/components/Header';
 import { ContinentHero } from '@/components/ContinentHero';
 import { ContinentDetails } from '@/components/ContinentDetails';
 import { CityList } from '@/components/CityList';
 
+import type { City } from "@/types/City";
 import type { Continent } from "@/types/Continent";
 
 interface ContinentProps {
   continent: Continent;
+  cities: City[];
 }
 
-export default function Continent({ continent }: ContinentProps) {
+
+
+export default function Continent({ continent, cities }: ContinentProps) {
   return (
     <>
-        <Header />
+      <Header />
 
-        <ContinentHero continent={continent} />
-        <ContinentDetails continent={continent} />
+      <ContinentHero continent={continent} />
+      <ContinentDetails continent={continent} cities={cities} />
 
-        <CityList />
+      <CityList cities={cities} />
     </>
   )
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [{ params: { slug: 'europa' } }],
-    fallback: false,
+  const api = axios.create({
+    baseURL: 'http://localhost:3333/'
+  });
+
+  try {
+    const continents = (await api.get('continents')).data as Continent[];
+    return {
+      paths: continents.map((continent) => ({ params: { slug: continent.id } })),
+      fallback: false,
+    }
+  } catch (error) {
+    return {
+      paths: [],
+      fallback: false,
+    }
   }
 };
 
 export const getStaticProps: GetStaticProps<ContinentProps> = async ({ params }: GetStaticPropsContext) => {
+  const api = axios.create({
+    baseURL: 'http://localhost:3333/'
+  });
+  
+  const continent = (await api.get(`continents/${params?.slug}`)).data as Continent;
+  const cities = (await api.get(`cities?continent=${params?.slug}`)).data as City[];
+
   return {
     props: {
-      continent: {
-        id: '1',
-        name: "Europa",
-        slug: "europa",
-        CTA: {
-          description: "O continente mais antigo.",
-          imageUrl: "https://images.unsplash.com/photo-1473951574080-01fe45ec8643?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=904&q=80",
-        },
-        description: "A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste.",
-        imageUrl: "https://images.unsplash.com/photo-1616862890964-fd20e9dd106d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-      },
+      continent,
+      cities,
     }
   }
 };

@@ -26,12 +26,12 @@ function Card({ continent }: { continent: Continent }) {
     return (
         <Box w="100%" h="450px" backgroundImage={continent.CTA.imageUrl} backgroundSize="cover">
             <Flex w="100%" h="450px" justify="center" align="center" direction="column" backgroundColor="#1C140190">
-                <Link href={`/continent/${continent.slug}`}>
+                <Link href={`/continent/${continent.id}`}>
                     <Text fontSize="3rem" fontWeight="bold" color="Light.Text">
                         {continent.name}
                     </Text>
                 </Link>
-                <Link href={`/continent/${continent.slug}`}>
+                <Link href={`/continent/${continent.id}`}>
                     <Text fontSize="1.5rem" fontWeight="bold" color="Light.Info">
                         {continent.CTA.description}
                     </Text>

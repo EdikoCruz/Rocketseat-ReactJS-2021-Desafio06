@@ -1,7 +1,9 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
+import React from 'react';
 
 import { FaInfoCircle } from "react-icons/fa";
 
+import type { City } from "@/types/City";
 import type { Continent } from "@/types/Continent";
 
 function Card({ value, label, marginRight }: { value: string, label: React.ReactNode, marginRight?: string }) {
@@ -10,14 +12,19 @@ function Card({ value, label, marginRight }: { value: string, label: React.React
             <Text fontSize="3rem" fontWeight="semibold" color="Highlight">
                 {value}
             </Text>
-            <Text fontSize="1.5rem" fontWeight="semibold" color="Dark.Text" whiteSpace="nowrap">
-                {label}
-            </Text>
+            {label}
         </Flex>
     )
 }
 
-export function ContinentDetails({ continent }: { continent: Continent }) {
+
+const CustomLabel = React.forwardRef(({ children, ...rest }: any, ref) => (
+    <Box ref={ref} {...rest}>
+        {children}
+    </Box>
+))
+
+export function ContinentDetails({ continent, cities }: { continent: Continent, cities: City[] }) {
     return (
         <Flex
             w="100%" maxW="1160px" p="1" mx="auto"
@@ -31,19 +38,28 @@ export function ContinentDetails({ continent }: { continent: Continent }) {
                 </Text>
             </Box>
             <Flex justify="center" align="center" direction="row">
-                <Card value="50" label="países" marginRight="2.625rem" />
-                <Card value="60" label="línguas" marginRight="2.625rem" />
-                <Card value="27" label={
-                    <>
-                        cidades +100
-                        <FaInfoCircle 
-                            style={{display: "inline", marginLeft: "5px"}}
-                            size="1rem"
-                            color="Dark.info"
-                            opacity={0.5}
-                        />
-                    </>
-                }/>
+                <Card value={String(continent.contries)} label={
+                    <Text fontSize="1.5rem" fontWeight="semibold" color="Dark.Text" whiteSpace="nowrap">países</Text>
+                } marginRight="2.625rem" />
+                <Card value={String(continent.languages)} label={
+                    <Text fontSize="1.5rem" fontWeight="semibold" color="Dark.Text" whiteSpace="nowrap">línguas</Text>
+                } marginRight="2.625rem" />
+                <Card value={String(cities.length)} label={
+                    <Box whiteSpace="nowrap" position="relative" paddingRight="calc(1rem + 5px)">
+                        <Text fontSize="1.5rem" fontWeight="semibold" color="Dark.Text">
+                            cidades +100
+                        </Text>
+                        <Tooltip label='as 100 cidades mais visitadas do mundo'>
+                            <CustomLabel style={{ position: "absolute", right: "0", bottom: "calc(50% - 0.5rem)" }}>
+                                <FaInfoCircle
+                                    size="1rem"
+                                    color="Dark.info"
+                                    opacity={0.5}
+                                />
+                            </CustomLabel>
+                        </Tooltip>
+                    </Box>
+                } />
             </Flex>
         </Flex>
     )

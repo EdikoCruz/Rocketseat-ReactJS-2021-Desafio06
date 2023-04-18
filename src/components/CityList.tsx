@@ -1,7 +1,8 @@
 import { Flex, Spacer, Image, Text } from "@chakra-ui/react"
 
+import type { City } from "@/types/City";
 
-function Card() {
+function Card({city}:{city:City}) {
     return (
         <Flex
             w="256px"
@@ -13,7 +14,7 @@ function Card() {
         >
             <img src="" alt="" />
             <Image
-                src="https://images.unsplash.com/photo-1473951574080-01fe45ec8643?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=904&q=80"
+                src={city.imageUrl}
                 alt="Foto da cidade"
                 width={256}
                 height={175}
@@ -30,13 +31,18 @@ function Card() {
                     align="flex-start"
                     direction="column"
                 >
-                    <Text marginBottom="0.75rem" fontFamily="Barlow" fontSize="1.25rem" fontWeight="semibold" color="Dark.Text">Londres</Text>
-                    <Text fontFamily="Barlow" fontSize="1rem" fontWeight="400" color="Dark.Text">Londres</Text>
+                    <Text marginBottom="0.75rem" fontFamily="Barlow" fontSize="1.25rem" fontWeight="semibold" color="Dark.Text">
+                        {city.name}
+                    </Text>
+                    <Text fontFamily="Barlow" fontSize="1rem" fontWeight="400" color="Dark.Text">
+                        {city.country}
+                    </Text>
                 </Flex>
                 <Spacer />
                 <Image
-                    src="https://images.unsplash.com/photo-1473951574080-01fe45ec8643?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=904&q=80"
-                    alt="Bandeira do país"
+                    objectFit="cover"
+                    src={city.flag.imageUrl}
+                    alt={city.flag.imageAlt}
                     width={30}
                     height={30}
                     borderRadius={50}
@@ -46,7 +52,7 @@ function Card() {
     )
 }
 
-export function CityList() {
+export function CityList({cities}:{cities:City[]}) {
     return (
         <Flex
             w="100%" maxW="1160px" p="1" mx="auto"
@@ -56,11 +62,9 @@ export function CityList() {
             <Text marginBottom="2.5rem" fontSize="2.25rem" color="Dark.Text">Cidades +100</Text>
 
             <Flex w="100%" justify="space-between" align="center" direction="row" wrap="wrap">
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                {
+                    cities.map(city => <Card key={city.id} city={city}/>)
+                }
             </Flex>
         </Flex>
     )

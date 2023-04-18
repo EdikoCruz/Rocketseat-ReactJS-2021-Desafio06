@@ -1,6 +1,5 @@
 export type Continent = {
     id: string,
-    slug: string,
     CTA: {
         imageUrl: string,
         description: string,
@@ -8,4 +7,6 @@ export type Continent = {
     name: string,
     description: string,
     imageUrl: string,
+    contries: number,
+    languages: number,
 }

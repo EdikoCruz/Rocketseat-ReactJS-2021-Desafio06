@@ -1,10 +1,145 @@
 {
+    "traits": [
+        {
+            "imageUrl": "traits/cocktail.svg",
+            "imageAlt": "Imagem de Bebida",
+            "label": "vida noturna"
+        },
+        {
+            "imageUrl": "traits/surf.svg",
+            "imageAlt": "Imagem de praia",
+            "label": "praia"
+        },
+        {
+            "imageUrl": "traits/building.svg",
+            "imageAlt": "Imagem de prédio",
+            "label": "moderno"
+        },
+        {
+            "imageUrl": "traits/museum.svg",
+            "imageAlt": "Imagem de museu",
+            "label": "clássico"
+        },
+        {
+            "imageUrl": "traits/earth.svg",
+            "imageAlt": "Imagem do mundo",
+            "label": "e mais..."
+        }
+    ],
     "continents": [
-        {"id": 0, "name": "América do Norte"},
-        {"id": 0, "name": "América do Sul"},
-        {"id": 0, "name": "Ásia"},
-        {"id": 0, "name": "África"},
-        {"id": 0, "name": "Europa"},
-        {"id": 0, "name": "Oceania"}
+        {
+            "id": "europa",
+            "name": "Europa",
+            "CTA": {
+                "description": "O continente mais antigo.",
+                "imageUrl": "https://images.unsplash.com/photo-1473951574080-01fe45ec8643?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=904&q=80"
+            },
+            "description": "A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste.",
+            "imageUrl": "https://images.unsplash.com/photo-1616862890964-fd20e9dd106d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+            "contries": 50,
+            "languages": 60
+        },
+        {
+            "id": "america",
+            "name": "América",
+            "CTA": {
+                "description": "O continente mais novo.",
+                "imageUrl": "https://images.unsplash.com/photo-1657321670414-914015bbb50c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1450&q=80"
+            },
+            "description": "América é o continente localizado no hemisfério ocidental e que se estende, no sentido norte-sul, desde o oceano Ártico até o cabo Horn, ao longo de cerca de 15 mil quilômetros. É o segundo maior continente em área.",
+            "imageUrl": "https://images.unsplash.com/photo-1591533985302-42123fa9240b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+            "contries": 35,
+            "languages": 1061
+        }
+    ],
+    "cities": [
+        {
+            "id": "brasil-rio-de-janeiro",
+            "name": "Rio de Janeiro",
+            "flag": {
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg",
+                "imageAlt": "Bandeira do Brasil"
+            },
+            "country": "Brasil",
+            "continent": "america",
+            "imageUrl": "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+        },
+        {
+            "id": "portugal-lisboa",
+            "name": "Lisboa",
+            "flag": {
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg",
+                "imageAlt": "Bandeira de Portugal"
+            },
+            "country": "Portugal",
+            "continent": "europa",
+            "imageUrl": "https://images.unsplash.com/photo-1579008866428-1c8269a971c7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
+        },
+        {
+            "id": "portugal-porto",
+            "name": "Porto",
+            "flag": {
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg",
+                "imageAlt": "Bandeira de Portugal"
+            },
+            "country": "Portugal",
+            "continent": "europa",
+            "imageUrl": "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+        },
+        {
+            "id": "franca-paris",
+            "name": "Paris",
+            "flag": {
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg/1024px-Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg.png",
+                "imageAlt": "Bandeira da França"
+            },
+            "country": "França",
+            "continent": "europa",
+            "imageUrl": "https://images.unsplash.com/photo-1593114203584-7fefde09941b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+        },
+        {
+            "id": "italia-roma",
+            "name": "Roma",
+            "flag": {
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/1024px-Flag_of_Italy.svg.png",
+                "imageAlt": "Bandeira da Itália"
+            },
+            "country": "Itália",
+            "continent": "europa",
+            "imageUrl": "https://images.unsplash.com/photo-1514896856000-91cb6de818e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
+        },
+        {
+            "id": "italia-florenca",
+            "name": "Florença",
+            "flag": {
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/1024px-Flag_of_Italy.svg.png",
+                "imageAlt": "Bandeira da Itália"
+            },
+            "country": "Itália",
+            "continent": "europa",
+            "imageUrl": "https://images.unsplash.com/photo-1516186366443-0744a82bffef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+        },
+        {
+            "id": "mexico-cancun",
+            "name": "Cancún",
+            "flag": {
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg",
+                "imageAlt": "Bandeira do México"
+            },
+            "country": "México",
+            "continent": "america",
+            "imageUrl": "https://images.unsplash.com/photo-1533743914085-403451366d53?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+        },
+        {
+            "id": "canada-coronto",
+            "name": "Toronto",
+            "flag": {
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg",
+                "imageAlt": "Bandeira do Canadá"
+            },
+            "country": "Canadá",
+            "continent": "america",
+            "imageUrl": "https://images.unsplash.com/photo-1517090504586-fde19ea6066f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+        }
     ]
 }
