@@ -14,7 +14,10 @@ export function MainHero() {
                     </Text>
                 </Flex>
 
-                <Box width={418} height={271} marginBottom="-35px">
+                <Box width={418} height={271} marginBottom="-35px" display={{
+                    base: 'none',
+                    md: 'block'
+                }}>
                     <Image
                         style={{ transform: "rotate(3deg)" }}
                         src="/airplane.svg"

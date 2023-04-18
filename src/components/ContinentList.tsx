@@ -11,10 +11,10 @@ function ContinentCTA() {
         <>
             <Box w="90px" h="2px" marginX="auto" background="Dark.Text" />
             <Flex w="100%" maxW="1160px" p="1" mx="auto" justify="center" align="center" direction="column" marginY="3.25rem">
-                <Text fontSize="2.25rem" fontWeight="medium" color="Dark.Text">
+                <Text fontSize="2.25rem" fontWeight="medium" color="Dark.Text" textAlign="center">
                     Vamos nessa?
                 </Text>
-                <Text fontSize="2.25rem" fontWeight="medium" color="Dark.Text">
+                <Text fontSize="2.25rem" fontWeight="medium" color="Dark.Text" textAlign="center">
                     Então escolha seu continente
                 </Text>
             </Flex>

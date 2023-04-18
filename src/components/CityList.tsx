@@ -55,13 +55,13 @@ function Card({city}:{city:City}) {
 export function CityList({cities}:{cities:City[]}) {
     return (
         <Flex
-            w="100%" maxW="1160px" p="1" mx="auto"
+            w="100%" maxW="1160px" p="1rem" mx="auto"
             justify="flex-start" align="flex-start" direction="column"
             marginBottom="2.1875rem"
         >
             <Text marginBottom="2.5rem" fontSize="2.25rem" color="Dark.Text">Cidades +100</Text>
 
-            <Flex w="100%" justify="space-between" align="center" direction="row" wrap="wrap">
+            <Flex w="100%" justify="space-around" align="center" direction="row" wrap="wrap">
                 {
                     cities.map(city => <Card key={city.id} city={city}/>)
                 }

@@ -27,9 +27,10 @@ export function TraitList({ traits }: { traits: Trait[] }) {
             maxW="1160px"
             p="1"
             mx="auto"
-            justify="space-between"
+            justify="space-around"
             align="flex-end"
             marginY="5rem"
+            wrap='wrap'
         >
             {
                 traits.map(trait => <Card key={trait.label} trait={trait} />)
